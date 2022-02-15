@@ -1,0 +1,180 @@
+.benner_logo
+{
+	height: 180px;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+
+/* Navbar */
+.navbar-brand{
+	font-family: Viga;
+	font-size: 32px;
+}
+/* Navbar */
+
+.tombol{
+	text-transform: uppercase;
+	border-radius: 40px;
+}
+
+.label{
+	font-family: Viga;
+	font-size: 20px;
+}
+
+.h, .p{
+	font-family: Viga;
+}
+
+.font_logo{
+	font-family: Viga;
+	font-size: 35px;
+}
+
+.font_konten{
+	font-family: Viga;
+	font-size: 20px;
+}
+/* ========================================== */
+
+
+.jumbotron{
+	background-color: #2b7df8;
+	background-size: cover;
+}
+
+
+/* info panel*/
+.info-panel{
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+	border-radius: 12px;
+	margin-top: -95px;
+	background-color: white;
+	padding: 5px;
+}
+
+.info-panel img{
+	width: 100px;
+	height: 100px;
+}
+
+.info-panel h4{
+	font-size: 16px;
+	font-weight: bold;
+	font-family: Quattrocento Sans;
+}
+
+.info-panel h5{
+	font-size: 24px;
+	font-weight: 800;
+	font-family: Viga;
+}
+
+.info-panel h6{
+	font-size: 24px;
+	font-weight:200;
+	font-family: Viga;
+}
+
+.info-panel p{
+	color: #cacaca;
+	margin-top: 5px;
+	font-size: 14px;
+	font-family: Quattrocento Sans;
+}
+
+.info-panel span{
+	font-size: 24px;
+	font-weight: 500;
+	font-family: Quattrocento Sans;
+}
+/* info panel */
+
+
+/* Working Space */
+.workingspace{
+	margin-top: 100px;
+}
+
+.workingspace p{
+	font-family: Quattrocento Sans;
+	font-weight: inherit;
+}
+/* Working Space */
+
+
+
+/* footer */
+.contact{
+	background-color: whitesmoke;
+	font-family: concert;
+}
+
+.gambar_logo{
+	width: 100px;
+	height: 100px;
+}
+
+.gambar_contact{
+	width: 30px;
+	height: 30px;
+}
+
+.font_footer{
+	font-family: Quattrocento Sans;
+	padding: 5px;
+}
+
+.font_footer2{
+	font-family: Quattrocento Sans;
+	margin-top: 100px;
+}
+
+.footer{
+	margin-top: 15px;
+}
+
+.footer p{
+	color: black;
+	font-size: 18px;
+}
+/* footer */
+
+
+
+
+
+/* Desktop Version */
+@media (min-width: 992px) { 
+
+	.nav-link{
+		text-transform: uppercase;
+		margin-right: 30px;
+	}
+
+	.navbar-brand, .nav-link{
+		color: black;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+	}
+
+	.nav-link:hover::after{
+		content:'';
+		display: block;
+		border-bottom: 3px solid #2b7df8;
+		width: 50%;
+		margin: auto;
+		padding-bottom: 5px;
+		margin-bottom: -8px;
+	}	
+	
+ }
+/* Desktop Version */
+
+
+/* Mobile Version */
+@media (min-width: 576px) { 
+
+ }
+ /* Mobile Version */

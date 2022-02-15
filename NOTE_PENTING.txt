@@ -1,0 +1,104 @@
+ ====================================================================================================
+     NOTE PENTING SEKALI
+
+
+
+
+     #####---Task1---#####
+     Ini DESAIN CODING-1 ==========================================================
+                             
+                             CONTROLLER     
+     public function detail_tenant($id)
+     {
+          $data['makeup'] = $this->Model_admin->detail_tenant($id, 'tb_tenant')->result();
+          $this->load->view('admin/tenant/v_detail_makeup', $data);
+     }
+
+                                MODEL
+     public function detail_tenant($id, $table)
+     {
+         $this->db->where('kode_tenant', $id);
+         $query = $this->db->get($table);
+         return $query;
+     }
+
+     Ini DESAIN CODING-1 ==========================================================
+
+
+     (==============================Penjelsannya==============================)
+     Pada Desain CODING-1 deklarasi primary key dilakukan pada Model
+     Deklarasi primary-key yang dimaksud pada MODEL adalah : 
+     ----->  $this->db->where('kode_tenant', $id);
+     Field "kode_tenant" = $id dengan nilai primary yang di pilih sesuai parameter
+     ----->  "SELECT * FROM tb_tanant where 'kode_tenant' = $id"
+
+
+
+
+
+     #####---Task2---#####
+     Ini Desain CODING-2 ==========================================================
+
+                             CONTROLLER
+     $where = ['kode_tenant' => $id];
+     $data['makeup'] = $this->Model_admin->detail_tenant($where, 'tb_tenant')->result();
+     $this->load->view('admin/tenant/v_detail_tenant', $data);
+
+                                MODEL
+     public function detail_tenant($where, $table)
+    {
+        $this->db->where($where);
+        $query = $this->db->get($table);
+        return $query;
+    }
+
+     Ini Desain CODING-2 ==========================================================
+
+     (==============================Penjelsannya==============================)
+     Pada Desain CODING-2 deklarasi primary-key dilakukan pada Controller 
+     Deklarasi primary-key yang dimaksud adalah  
+     ----->  |$where = ['kode_tenant' => $id];|
+     Variable Where memiliki "fields_primary" sesaui dengan $id yang dipilih
+
+
+    
+     Kesimpulan---------------------------------------------------------------
+     Pada Desain CODING-1 dan Desain CODING-2 memilik deklarasi primary-key berbeda, namun
+     memilik fungsi yang sama untuk mengambil primary-key yang di butuhkan. Pada Desain
+     CODING-1 deklarasi primary-key terlatak pada MODEL dan sedangkan Desain CODING-2
+     deklarasi primary-key terletak pada CONTROLLER.
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+     sial pusing bedain Desain CODING 1 dan Desain CODING 2 wkwkwkwk
+     untung aja bisa tau bedanya apa... untung ada var_dump wkwkwkwk
+
+     untung ada "var_dump()" dan "print_r" wkwkwk jadi bisa nemu bedanya wkwkwkwk
+
+
+     NOTE PENTING SEKALI
+====================================================================================================
+
+$order = [
+                'no_invoice'        => $no_invoice,
+                'kode_pembayaran'   => $kode_pembayaran,
+                'kode_tenant'       => $item['id'],
+                'jumlah_pesanan'    => $item['qty'],
+                'tanggal_pesan'     => date('d-M-Y'),
+                'tanggal_mulai'     => $item['tanggal_mulai'],
+                'tanggal_akhir'     => $item['tanggal_akhir'],
+                'status_pesanan'    => 'Menunggu Pembayaran'
+            ];
+
+            $this->db->insert('tb_orders', $order);
+
+
+            $this->db->select('qty');
+            $qty = $this->db->get_where('tb_tenants', ['kode_tenant' => $item['id']])->result_array();
+            $jumlah = $qty[0]['qty'] - $item['qty'];
+
+            $data = ['qty' => $jumlah];
+
+            $this->db->where('kode_tenant', $item['id']);
+            $this->db->update('tb_tenants', $data);
+        }
